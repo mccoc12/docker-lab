@@ -4,15 +4,11 @@ services:
     image: mccoc12/nginx
     ports:
         - 80:80
-    networks:
-        - app
   web:
     build: .
     image: mccoc12/flaskapp
     ports:
       - 5000:5000
-    networks:
-      - app
     volumes:
       - .:/code
     depends_on:
@@ -21,5 +17,7 @@ services:
     image: redis
     ports:
       - 6379:6379
-    networks:
-      - app
+networks:
+default:
+    external: true
+    name: app
