@@ -1,4 +1,5 @@
-version: '2'
+s
+version: ''
 services:
     nginx:
     image: mccoc12/nginx
