@@ -4,6 +4,8 @@ services:
     image: mccoc12/nginx
     ports:
         - 80:80
+    networks:
+        - app
   web:
     build: .
     image: mccoc12/flaskapp
